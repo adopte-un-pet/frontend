@@ -1,0 +1,30 @@
+// Your variable overrides
+
+// Theme color default definitions
+$primary: #8050E2;
+$secondary: #A4DB28;
+$dark: #000;
+
+// Forms
+$input-btn-focus-box-shadow: none;
+$input-focus-border-color: $primary;
+$input-border-color: #000;
+$input-border-width: 2px;
+$input-border-radius: 5px;
+$input-focus-box-shadow: none;
+$box-shadow: none;
+$input-box-shadow: none;
+$btn-active-box-shadow: none;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-focus-width: 0;
+$input-color: #282828;
+$font-family-base: 'Open Sans', Adrianna, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+$input-placeholder-color: #b3b3b3;
+$btn-border-radius: 8px;
+
+
+// Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap';
+// BootstrapVue and its default variables
+@import '../node_modules/bootstrap-vue/src/index.scss';

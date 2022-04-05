@@ -1,0 +1,44 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+
+:last-child {
+  margin-bottom: 0 !important;
+}
+
+.full_vh {
+  min-height: 100vh;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align_start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.align_center {
+  display: flex;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}

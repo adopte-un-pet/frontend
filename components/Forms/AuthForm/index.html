@@ -1,0 +1,21 @@
+<b-form class="auth_form" @submit="$emit('submit', form)">
+  <b-form-input
+    id="email"
+    class="md_input"
+    v-model="form.email"
+    type="email"
+    placeholder="Email"
+    autocomplete="off"
+    required
+  ></b-form-input>
+  <b-form-input
+    id="password"
+    class="md_input"
+    v-model="form.password"
+    type="password"
+    autocomplete="off"
+    placeholder="Mot de passe"
+    required
+  ></b-form-input>
+  <button type="submit" class="btn btn-primary auth_btn">{{ButtonText}}</button>
+</b-form>

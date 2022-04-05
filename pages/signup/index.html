@@ -1,3 +1,16 @@
-<section id="signup" class="full_vh w100 center">
-  <AuthForm style="width: 100%" ButtonText="Créer mon compte"/>
+<section id="signup" style="height: 100vh;" class="w100 center">
+  <div class="row w-100 h-100">
+    <div class="d-sm-none d-lg-block col-lg-7 p-0">
+      <nuxt-img
+        class="auth_background"
+        preload
+        alt="dog image"
+        src="/animals/pink-dog.webp"
+      />
+    </div>
+    <div class="col-md-12 col-lg-5 auth_form--container">
+      <Logo style="width: 150px; height: 150px; margin-bottom: 2rem;"/>
+      <AuthForm style="width: 100%" ButtonText="Créer mon compte"/>
+    </div>
+  </div>
 </section>

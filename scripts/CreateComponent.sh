@@ -1,11 +1,25 @@
-COMPONENT_NAME="$(echo "$1" | sed 's/.*/\u&/')"
-BASE_PATH=components/"$COMPONENT_NAME"
-HTML_PATH="$BASE_PATH"/index.html
-VUE_PATH="$BASE_PATH"/index.vue
-TS_PATH="$BASE_PATH"/script.ts
+ARG=$1
+SPLIT_ARG=(${ARG//// })
+SPLIT_ARG_LENGTH=${#SPLIT_ARG[@]}
+COMPONENT_NAME="$(echo "${SPLIT_ARG[$SPLIT_ARG_LENGTH - 1]}" | sed 's/.*/\u&/')"
+BASE_PATH=components/
+
+unset 'SPLIT_ARG[${#SPLIT_ARG[@]}-1]'
+
+for file in "${SPLIT_ARG[@]}"
+do
+    BASE_PATH+="$(echo "$file" | sed 's/.*/\u&/')/"
+done
+
+FULL_PATH="$BASE_PATH""$COMPONENT_NAME"
+HTML_PATH="$FULL_PATH"/index.html
+VUE_PATH="$FULL_PATH"/index.vue
+TS_PATH="$FULL_PATH"/script.ts
+
+echo "$FULL_PATH"
 
 
-mkdir -p "$BASE_PATH"
+mkdir -p "$FULL_PATH"
 touch "$HTML_PATH"
 touch "$VUE_PATH"
 touch "$TS_PATH"

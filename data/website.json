@@ -1,0 +1,23 @@
+{
+  "name": "Adopte un pet",
+  "title": "Adopter un animal : nos annonces et nos éleveurs",
+  "description": "Site communautaire dans lequel les éleveurs français d’animaux de compagnie pourront inscrire leur élevage et présenter les animaux destinés à la vente avec une fiche par animal.",
+  "category": "games",
+  "url": "http://localhost:3000",
+  "author": "AUP",
+  "author_website": "http://localhost:3000",
+  "email": "contact@adopte-un-pet.fr",
+  "keywords": "adopte animal chien chat élevage france bretagne",
+  "twitter": "@adopte-un-pet",
+  "thumbnail": "http://localhost:3000/thumbnail.jpg",
+  "lang": "fr",
+  "city": "rennes",
+  "country": "france",
+  "postal_code": "35000",
+  "languages": [
+    {
+      "lang": "fr",
+      "url": "http://localhost:3000"
+    }
+  ]
+}

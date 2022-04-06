@@ -1,25 +1,7 @@
+import {meta} from './data/meta'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: '',
-    titleTemplate: '%s - Adopte un pet',
-    htmlAttrs: {
-      lang: 'fr'
-    },
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Simplifier la gestions des interventions de votre entreprise grâce à Easy Tpe.'
-      },
-      {name: 'format-detection', content: 'telephone=no'}
-    ],
-    link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-    ]
-  },
+  head: meta,
 
   loading: {
     color: '#8050E2',

@@ -1,0 +1,13 @@
+.auth_background {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: -300px;
+}
+
+.auth_form--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

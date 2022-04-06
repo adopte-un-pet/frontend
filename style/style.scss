@@ -1,6 +1,7 @@
 @import "materialIcon";
 @import "bootstrap";
 @import "starter";
+@import "animations";
 .md_input {
   height: 50px;
 }
@@ -11,3 +12,12 @@
 .btn:not(:disabled):not(:active) {
   transition: transform .2s;
 }
+.opacity-disable {
+  opacity: 1;
+  animation: fadeIn 1s;
+}
+
+.opacity-enable {
+  opacity: 1;
+}
+

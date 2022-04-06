@@ -1,5 +1,5 @@
 export default {
-    name: "AuthForm",
+    name: "SignupForm",
     props: {
       ButtonText: {type: String, default: "Confirmer"}
     },

@@ -44,16 +44,20 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     "@nuxt/image",
-    "@nuxtjs/axios",
     "@nuxtjs/dotenv",
-    "@nuxtjs/proxy",
     "@nuxtjs/sitemap",
+    "@nuxtjs/axios",
+    "@nuxtjs/proxy"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     'bootstrap-vue/nuxt',
+    "@nuxtjs/auth-next"
   ],
+  axios: {
+    proxy: true
+  },
 
   auth: {
     strategies: {
@@ -79,12 +83,6 @@ export default {
       target: process.env.API_URL || 'http://localhost:3333',
       pathRewrite: { '^/api/': 'api/' }
     }
-  },
-  axios: {
-    proxy: true
-  },
-  router: {
-    middleware: ['auth']
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

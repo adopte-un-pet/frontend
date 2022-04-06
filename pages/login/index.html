@@ -6,13 +6,13 @@
         :class="{'opacity-enable': mediaLoaded}"
         class="auth_background hide_alt opacity-disable"
         alt="dog image"
-        src="/animals/pink-dog.webp"
+        src="/animals/blue-cat.webp"
       />
     </div>
     <div class="col-md-12 col-lg-5 auth_form--container">
       <Logo style="width: 150px; height: 150px; margin-bottom: 2rem;"/>
-      <SignupForm @submit="handleSubmit" style="width: 100%" ButtonText="Créer mon compte"/>
-      <span class="text-gray mt-3">Vous avez déjà un compte ? <NuxtLink class="text-primary" to="/login">Se connecter</NuxtLink></span>
+      <LoginForm @submit="handleSubmit" style="width: 100%" ButtonText="Connexion"/>
+      <span class="text-gray mt-3">Pas de compte ? <NuxtLink class="text-primary" to="/signup">Créez en un</NuxtLink></span>
     </div>
   </div>
 </section>

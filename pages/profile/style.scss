@@ -29,6 +29,13 @@
   display: flex;
 }
 
+
+.buttonSave{
+  position: absolute;
+  margin-top: 20px;
+  right: 0;
+}
+
 #text{
   width: 100%;
   position: relative;
@@ -38,14 +45,20 @@
 }
 
 #Content{
-  margin-left: 200px;
+  align-items: center;
 }
 
-.buttonSave{
-  position: absolute;
-  margin-top: 20px;
-  right: 0;
+.truc{
+  margin-right: 20px;
 }
+
+.ContentInput{
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 #photo{
   height: 100px;
 }
@@ -53,45 +66,9 @@
   margin-left: 100px;
 }
 
-#editPicture{
-  display: flex;
-}
-
-.choice{
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-}
-.inputProfile{
-  margin-left: 200px;
-}
-#username{
-  width: 100%;
-  height: 100px;
-}
-#webSite{
-  width: 100%;
-  height: 100px;
-}
-
 #photoDownload{
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-left: 200px;
 }
 
-
-#bio{
-  width: 100%;
-  height: 100px;
-}
-
-.textArea{
-  margin-left: 200px;
-}
-
-.trucM{
-  width: 100px;
-  font-size: 20px;
-}

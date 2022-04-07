@@ -21,19 +21,4 @@ export default {
         console.log(form)
       }
     }
-  },
-  computed: {
-    fullName(): string {
-      return this.name + " " + this.lastname
-    }
-  },
-  methods: {
-    handleSubmit(form: Body) {
-      console.log(form)
-    },
-    handleToto(): void{
-      // @ts-ignore
-      this.$refs.LoginForm.log("bidule")
-    }
-  }
-})
+}

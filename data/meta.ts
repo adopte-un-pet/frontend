@@ -76,6 +76,9 @@ export const meta = {
     {hid: 'apple-icon:180', rel: 'apple-touch-icon', size: '180x180', href: '/favicon/apple-icon-180x180.png'},
 
     {hid: 'shortcut-icon', rel: 'shortcut icon', href: '/favicon/favicon-96x96.png'}
+  ],
+  script: [
+    {src: "https://kit.fontawesome.com/dcc05147de.js"}
   ]
 }
 

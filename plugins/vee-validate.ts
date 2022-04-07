@@ -1,7 +1,7 @@
 import Vue from "vue";
 import * as VeeValidate from 'vee-validate';
-const {ValidationProvider, ValidationObserver} = VeeValidate;
-import {required, email, confirmed} from "vee-validate/dist/rules";
+import {email, required} from "vee-validate/dist/rules";
+const {extend, setInteractionMode, ValidationObserver, ValidationProvider} = VeeValidate;
 
 
 Vue.component('ValidationProvider', ValidationProvider)
@@ -20,8 +20,8 @@ extend('confirmed', {
 
 extend('password', {
   params: ['target'],
-  validate(value: string, { target }) {
-    return value === target;
+  validate(value: string, params: Record<string, any>) {
+    return value === params.target;
   },
   message: 'Les mots de passe saisis ne sont pas identiques'
 });

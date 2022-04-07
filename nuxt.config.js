@@ -36,8 +36,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     'bootstrap-vue/nuxt',
-    "@nuxtjs/auth-next",
-    "vee-validate"
+    "@nuxtjs/auth-next"
   ],
   axios: {
     proxy: true

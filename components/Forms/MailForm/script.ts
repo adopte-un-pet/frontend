@@ -8,10 +8,7 @@ export default {
     data(){
       return {
         loading: false,
-        form: {
-          email: "",
-          password: ""
-        }
+        email: ""
       }
     }
 }

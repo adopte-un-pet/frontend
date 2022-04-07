@@ -55,7 +55,7 @@ export const meta = {
     {hid: 'category', name: 'category', content: website.category}
   ],
   link: [
-    {hid: 'google:url', itemprop: 'url', href: website.url},
+    //{hid: 'google:url', itemprop: 'url', href: website.url},
     {hid: 'canonical', rel: 'canonical', href: website.url},
     {hid: 'alternate', rel: 'alternate', href: website.url, hreflang: website.lang},
 

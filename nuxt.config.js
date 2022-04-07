@@ -15,7 +15,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src: '~plugins/leaflet.ts', ssr: false}
+    {src: '~plugins/leaflet.ts', ssr: false},
+    {src: '~plugins/vee-validate.ts', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,7 +36,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     'bootstrap-vue/nuxt',
-    "@nuxtjs/auth-next"
+    "@nuxtjs/auth-next",
+    "vee-validate"
   ],
   axios: {
     proxy: true
@@ -68,5 +70,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+  }
 }

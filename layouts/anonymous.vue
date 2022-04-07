@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import Loader from "@/components/Common/Loader/index.vue"
+import Loader from "@/components/Loaders/Loader/index.vue"
 export default {
   name: "anonymous",
   components: {Loader},

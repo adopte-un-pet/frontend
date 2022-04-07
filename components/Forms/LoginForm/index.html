@@ -1,4 +1,6 @@
 <b-form class="auth_form" @submit="$emit('submit', form)">
+  text: {{text}}
+  <b-form-input v-model="text"  placeholder="Enter your name"></b-form-input>
   <b-form-input
     id="email"
     class="md_input"

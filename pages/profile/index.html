@@ -1,0 +1,66 @@
+<section id="profile" class="w-auto p-3">
+  <div>
+    <div id="banner" >
+      <b-button id="iconPhoto" >Icon</b-button>
+    </div >
+    <div id="navPicture">
+      <nuxt-img id="profilePhoto"
+                src="/animals/pink-dog.webp"
+                alt="profile picture"
+      />
+      <div id="text">
+        <h1>Profile</h1>
+        <p>Edit your picture and personal details</p>
+        <div class="buttonSave" >
+          <b-button variant="gray">Save</b-button>
+          <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Cancel</b-button>
+        </div>
+      </div>
+    </div>
+
+    <div id="username" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Username</span>
+      <b-form-input v-model="text" placeholder="User Name" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
+    </div>
+
+    <div id="webSite" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Website</span>
+      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
+    </div>
+
+    <div id="photo" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Photo</span>
+      <nuxt-img
+        id="photoDownload"
+        src="/animals/pink-dog.webp"
+        alt="profile picture"/>
+      <div class="col-md-12 col-lg-3 buttonSavePhoto" >
+        <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Delete</b-button>
+        <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Update</b-button>
+      </div>
+
+    </div>
+
+    <div id="bio" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Your Bio</span>
+      <select v-model="selected" class="col-md-12 col-lg-1 textArea">
+        <option>Normal Text</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+      <textarea/>
+    </div>
+
+    <div id="jobTitle" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Job Title</span>
+      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
+    </div>
+
+    <div id="email" class="choice">
+      <span class="col-md-12 col-lg-1 trucM">Email</span>
+      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
+    </div>
+  </div>
+
+</section>

@@ -1,3 +1,19 @@
+section{
+  padding: 30px;
+}
+
+.container{
+  margin-bottom: 20px;
+}
+
+.nextInput{
+  margin-right: -100px;
+}
+
+textarea{
+  max-width: 100%;
+}
+
 #banner{
   position: relative;
   margin-top: 20px;
@@ -25,7 +41,7 @@
   font-size: 20px;
 }
 
-#navPicture{
+#Picture{
   display: flex;
 }
 
@@ -67,8 +83,8 @@
 }
 
 #photoDownload{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 

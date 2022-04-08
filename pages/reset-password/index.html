@@ -12,7 +12,7 @@
     <div class="col-md-12 col-lg-5 auth_form--container" v-if="!mailSend">
       <h1 class="auth_title text-dark mb-5">Entrez votre email pour réinitialiser le mot de passe</h1>
       <Logo style="width: 150px; height: 150px; margin-bottom: 2rem;"/>
-      <MailForm @submit="handleSubmit" style="width: 100%" ButtonText="Envoyer"/>
+      <MailForm ref="MailForm" @submit="handleSubmit" style="width: 100%" ButtonText="Envoyer"/>
       <NuxtLink class="text-primary mt-3" to="/signup">Retour</NuxtLink>
     </div>
     <div class="col-md-12 col-lg-5 auth_form--container" v-if="mailSend">

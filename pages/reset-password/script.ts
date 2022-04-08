@@ -22,9 +22,13 @@ export default Vue.extend({
   mixins: [media],
   methods: {
     handleSubmit(email: string): void{
-      console.log(email)
+      const formRef = this.$refs.MailForm as Vue & { loading: boolean };
+      formRef.loading = true;
+      setTimeout(() => {
+        formRef.loading = false;
+      }, 2500)
       this.email = email;
       this.mailSend = true;
-    }
+    },
   }
 })

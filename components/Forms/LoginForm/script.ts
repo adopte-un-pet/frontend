@@ -1,17 +1,18 @@
+import TextLoad from "@/components/Loaders/TextLoad/index.vue"
 import Vue from "vue";
-
+import { ValidationProvider } from 'vee-validate';
 export default Vue.extend({
-    name: "LoginForm",
-    props: {
-      ButtonText: {type: String, default: "Confirmer"}
-    },
-    data(){
-      return {
-        text: "",
-        form: {
-          email: "",
-          password: ""
-        }
+  name: "LoginForm",
+  components: {TextLoad, ValidationProvider},
+  props: {
+    ButtonText: {type: String, default: "Confirmer"}
+  },
+  data() {
+    return {
+      loading: false,
+      form: {
+        email: "",
+        password: ""
       }
     },
   methods: {
@@ -22,9 +23,16 @@ export default Vue.extend({
       if(val.toLowerCase() === "toto" ) this.$emit('toto', val)
     }
   },
-  watch: {
-    text(val: string, oldVal: unknown){
-      this.alertToto(val)
+  computed: {
+    async formIsValid() {
+      const ref = this.$refs.loginObserver as Vue & { validate: () => boolean }
+      console.log(ref)
+      return await ref.validate();
+    }
+  },
+  methods: {
+    async handleSubmit() {
+      console.log("formIsValid", await this.formIsValid)
     }
   }
 })

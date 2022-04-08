@@ -17,6 +17,7 @@ export default {
   plugins: [
     { src: '~plugins/leaflet.ts', ssr: false },
     { src: '~plugins/moment-format.ts', ssr: true }
+    {src: '~plugins/vee-validate.ts', ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -70,5 +71,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+  }
 }

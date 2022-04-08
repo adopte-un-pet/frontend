@@ -1,4 +1,4 @@
-<b-form class="auth_form" @submit="$emit('submit', form)">
+<b-form class="auth_form" @submit.prevent="$emit('submit', form)">
   <b-form-input
     id="email"
     class="md_input"
@@ -17,5 +17,8 @@
     placeholder="Mot de passe"
     required
   ></b-form-input>
-  <button type="submit" class="btn btn-primary auth_btn">{{ButtonText}}</button>
+  <button type="submit" class="btn btn-primary auth_btn">
+    <span v-if="!loading">{{ButtonText}}</span>
+    <TextLoad v-if="loading"/>
+  </button>
 </b-form>

@@ -1,6 +1,6 @@
 import TextLoad from "@/components/Loaders/TextLoad/index.vue"
 export default {
-    name: "SignupForm",
+    name: "LoginForm",
     components: {TextLoad},
     props: {
       ButtonText: {type: String, default: "Confirmer"}
@@ -8,10 +8,7 @@ export default {
     data(){
       return {
         loading: false,
-        form: {
-          email: "",
-          password: ""
-        }
+        email: ""
       }
     }
 }

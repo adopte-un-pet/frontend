@@ -1,0 +1,15 @@
+<b-form class="auth_form" @submit.prevent="$emit('submit', email)">
+  <b-form-input
+    id="email"
+    class="md_input"
+    v-model="email"
+    type="email"
+    placeholder="Email"
+    autocomplete="off"
+    required
+  />
+  <button type="submit" class="btn btn-primary auth_btn">
+    <span v-if="!loading">{{ButtonText}}</span>
+    <TextLoad v-if="loading"/>
+  </button>
+</b-form>

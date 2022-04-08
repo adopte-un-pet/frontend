@@ -1,26 +1,7 @@
 import website from "./website.json";
+import {MetaInfo} from "vue-meta";
 
-type Meta = {
-  hid: string,
-  content: string
-}
-interface MetaGoogle extends Meta {
-  itemprop: string
-}
-interface MetaClassic extends Meta {
-  name: string
-}
-interface MetaOpenGraph extends Meta {
-  property: string
-}
-
-type Head = {
-  title: string,
-  meta: (MetaGoogle | MetaClassic | MetaOpenGraph)[],
-  link: {}[]
-}
-
-const updateHead = (title: string, description: string, route: string): Head => {
+const updateHead = (title: string, description: string, route: string): MetaInfo => {
   return {
     title: title,
     meta: [
@@ -36,7 +17,6 @@ const updateHead = (title: string, description: string, route: string): Head => 
       {hid: 'twitter:url', name: 'twitter:url', content: website.url + route}
     ],
     link: [
-      {hid: 'google:url', itemprop: 'url', href: website.url + route},
       {hid: 'canonical', rel: 'canonical', href: website.url + route},
       {hid: 'alternate', rel: 'alternate', href: website.url + route, hreflang: website.lang}
     ]

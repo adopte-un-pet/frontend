@@ -28,7 +28,8 @@
       "@nuxt/types",
       "@types/node",
       "@nuxt/image",
-      "@nuxt/axios"
+      "@nuxt/axios",
+      "vee-validate"
     ]
   },
   "exclude": [

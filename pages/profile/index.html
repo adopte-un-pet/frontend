@@ -1,65 +1,88 @@
-<section id="profile" class="w-auto p-3">
+<section class="container-fluid">
   <div>
-    <div id="banner" >
-      <b-button id="iconPhoto" >Icon</b-button>
+    <div class="d-none d-md-block d-lg-block banner" >
     </div >
-    <div id="navPicture">
+    <div id="Picture">
       <nuxt-img id="profilePhoto"
                 src="/animals/pink-dog.webp"
                 alt="profile picture"
+                class="d-none d-md-block d-lg-block"
       />
-      <div id="text">
-        <h1>Profile</h1>
-        <p>Edit your picture and personal details</p>
-        <div class="buttonSave" >
-          <b-button variant="gray">Save</b-button>
-          <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Cancel</b-button>
+      <div class="container">
+        <div class="row d-flex justify-content-between ">
+          <div id="profile">Profile</div>
+          <div class="buttonSave" >
+            <b-button variant="gray">Save</b-button>
+            <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Cancel</b-button>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="username" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Username</span>
-      <b-form-input v-model="text" placeholder="User Name" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
-    </div>
-
-    <div id="webSite" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Website</span>
-      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
-    </div>
-
-    <div id="photo" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Photo</span>
-      <nuxt-img
-        id="photoDownload"
-        src="/animals/pink-dog.webp"
-        alt="profile picture"/>
-      <div class="col-md-12 col-lg-3 buttonSavePhoto" >
-        <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Delete</b-button>
-        <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Update</b-button>
+    <div class="bigContainer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 nextInput">
+            <div class="col-12">
+              <span class="col-md-4 col-sm-2">Username</span>
+              <b-form-input placeholder="User Name" class="col-md-8 col-sm-10"></b-form-input>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="col-12">
+              <span class="col-md-4 col-sm-2">Website</span>
+              <b-form-input placeholder="Web Site" class="col-md-8 col-sm-10" ></b-form-input>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="col-12">
+              <span class="col-md-4 col-sm-2">Photo</span>
+              <nuxt-img
+                id="photoDownload"
+                src="/animals/pink-dog.webp"
+                alt="profile picture"
+              />
 
-    <div id="bio" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Your Bio</span>
-      <select v-model="selected" class="col-md-12 col-lg-1 textArea">
-        <option>Normal Text</option>
-        <option>B</option>
-        <option>C</option>
-      </select>
-      <span>Selected: {{ selected }}</span>
-      <textarea/>
-    </div>
+              <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Delete</b-button>
+              <b-button variant="white" style="border-color: #999fa5; margin-left: 5px">Update</b-button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div id="jobTitle" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Job Title</span>
-      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 nextInput">
+            <div class="col-12">
+              <span class="col-md-4 col-sm-2">Job Title</span>
+              <b-form-input v-model="text" placeholder="User Name" class="col-md-8 col-sm-10"></b-form-input>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="col-12 ">
+              <span class="col-md-4 col-sm-2">Email</span>
+              <b-form-input v-model="text" placeholder="Web Site" class="col-md-8 col-sm-10" ></b-form-input>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div id="email" class="choice">
-      <span class="col-md-12 col-lg-1 trucM">Email</span>
-      <b-form-input v-model="text" placeholder="Web Site" class="col-md-12 col-lg-3 inputProfile"></b-form-input>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="col-12">
+              <span class="col-md-4 col-sm-2">Your Bio</span>
+              <textarea class="col-md-8 col-sm-10 form-control" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 

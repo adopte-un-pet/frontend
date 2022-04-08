@@ -1,11 +1,7 @@
 import Vue from "vue";
-import * as VeeValidate from 'vee-validate';
 import {email, required} from "vee-validate/dist/rules";
-const {extend, setInteractionMode, ValidationObserver, ValidationProvider} = VeeValidate;
+import {extend, setInteractionMode} from 'vee-validate';
 
-
-Vue.component('ValidationProvider', ValidationProvider)
-Vue.component('ValidationObserver', ValidationObserver)
 
 setInteractionMode('eager')
 

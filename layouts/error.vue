@@ -18,7 +18,7 @@
           {{ error.message }}
         </p>
 
-        <b-link role="button" to="/" class="error_link btn btn-primary">
+        <b-link role="button" to="/" class="error_link btn btn-primary mt-2">
           revenir à l'accueil
         </b-link>
       </div>

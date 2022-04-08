@@ -1,0 +1,42 @@
+<b-form class="auth_form" @submit.prevent="handleSubmit">
+  <validation-observer ref="confirmObserver" v-slot="{ errors }" tag="div" style="display: flex; flex-direction: column; gap: 24px;">
+    <validation-provider v-slot="{ errors }" name="Le mot de passe" rules="required" tag="div">
+      <b-form-input
+        id="password"
+        class="md_input"
+        v-model="password"
+        :class="{'is-invalid': errors.length > 0}"
+        type="password"
+        placeholder="Mot de passe"
+        autocomplete="off"
+        required
+      />
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+    <validation-provider name="La confirmation de mot de passe" v-slot="{ errors }" rules="required|password:@Le mot de passe" tag="div">
+      <b-form-input
+        id="password"
+        class="md_input"
+        placeholder="Confirmation mot de passe"
+        v-model="password_confirm"
+        :class="{'is-invalid': errors.length > 0}"
+        type="password"
+        autocomplete="off"
+        required
+      />
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+
+
+    <button :disabled="formIsEmpty || formContainErrors(errors)"
+            type="submit"
+            class="btn btn-primary auth_btn">
+      <span v-if="!loading">{{ ButtonText }}</span>
+      <TextLoad v-if="loading"/>
+    </button>
+  </validation-observer>
+</b-form>

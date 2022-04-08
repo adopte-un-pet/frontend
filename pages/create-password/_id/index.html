@@ -6,13 +6,14 @@
         :class="{'opacity-enable': mediaLoaded}"
         class="auth_background hide_alt opacity-disable"
         alt="dog image"
-        src="/animals/blue-cat.webp"
+        src="/animals/orange-dog.webp"
       />
     </div>
     <div class="col-md-12 col-lg-5 auth_form--container">
+      <h1 class="auth_title text-dark mb-5">Choisissez un nouveau mot de passe</h1>
       <Logo style="width: 150px; height: 150px; margin-bottom: 2rem;"/>
-      <MailForm @submit="handleSubmit" style="width: 100%" ButtonText="Connexion"/>
-      <span class="text-gray mt-3">Pas de compte ? <NuxtLink class="text-primary" to="/signup">Créez en un</NuxtLink></span>
+      <ConfirmPassword ref="ConfirmPassword" @submit="handleSubmit" style="width: 100%"/>
+      <NuxtLink class="text-primary mt-3" to="/login">Se connecter</NuxtLink>
     </div>
   </div>
 </section>

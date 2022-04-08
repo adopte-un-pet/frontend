@@ -1,4 +1,3 @@
-import Vue from "vue";
 import {email, required} from "vee-validate/dist/rules";
 import {extend, setInteractionMode} from 'vee-validate';
 

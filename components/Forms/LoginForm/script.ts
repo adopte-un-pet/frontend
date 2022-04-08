@@ -14,19 +14,11 @@ export default Vue.extend({
         email: "",
         password: ""
       }
-    },
-  methods: {
-      log(arg: string): void{
-        console.log(arg)
-      },
-    alertToto(val: string): void{
-      if(val.toLowerCase() === "toto" ) this.$emit('toto', val)
     }
   },
   computed: {
     async formIsValid() {
       const ref = this.$refs.loginObserver as Vue & { validate: () => boolean }
-      console.log(ref)
       return await ref.validate();
     }
   },

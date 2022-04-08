@@ -24,6 +24,12 @@ $font-family-base: 'Open Sans', Adrianna, -apple-system, BlinkMacSystemFont, "Se
 $input-placeholder-color: #b3b3b3;
 $btn-border-radius: 8px;
 
+//navs
+$navbar-brand-font-size: 1.15rem;
+
+//tooltips
+$tooltip-bg: #000;
+
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
@@ -39,3 +45,7 @@ $theme-colors: map-merge(
 @import '../node_modules/bootstrap/scss/bootstrap';
 // BootstrapVue and its default variables
 @import '../node_modules/bootstrap-vue/src/index.scss';
+
+.tooltip-inner {
+  font-weight: bold !important;
+}

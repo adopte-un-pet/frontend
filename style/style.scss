@@ -2,6 +2,11 @@
 @import "bootstrap";
 @import "starter";
 @import "animations";
+
+:root {
+  --navbar-height: 50px;
+}
+
 .md_input {
   height: 50px;
 }

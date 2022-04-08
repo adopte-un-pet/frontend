@@ -30,7 +30,7 @@ export default Vue.extend({
         this.$emit('submit', this.password)
       }
     },
-    formContainErrors(errors: {'Le mot de passe': [], 'La confirmation de mot de passe': []}): boolean{
+    formContainErrors(errors: {[key: string]: []}): boolean{
       if(!errors) return false;
       if(!errors['Le mot de passe'] || !errors['La confirmation de mot de passe']) return false;
       return errors['Le mot de passe'].length > 0 || errors['La confirmation de mot de passe'].length > 0

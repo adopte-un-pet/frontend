@@ -1,5 +1,5 @@
 <b-form class="auth_form w-100" @submit.prevent="handleSubmit">
-  <validation-observer ref="loginObserver" tag="div" style="display: flex; flex-direction: column; gap: 24px;">
+  <validation-observer ref="loginObserver" v-slot="{ errors }" tag="div" style="display: flex; flex-direction: column; gap: 24px;">
     <validation-provider v-slot="{ errors }" name="L'email" rules="required|email" tag="div">
       <b-form-input
         id="email"
@@ -30,10 +30,9 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
-  </validation-observer>
-
-    <button type="submit" class="btn btn-primary auth_btn">
+    <button type="submit" :disabled="formIsEmpty || formContainErrors(errors)" class="btn btn-primary auth_btn">
       <span v-if="!loading">{{ ButtonText }}</span>
       <TextLoad v-if="loading"/>
     </button>
+  </validation-observer>
   </b-form>

@@ -1,9 +1,9 @@
 import TextLoad from "@/components/Loaders/TextLoad/index.vue"
 import Vue from "vue";
-import { ValidationProvider } from 'vee-validate';
+import {ValidationObserver, ValidationProvider} from 'vee-validate';
 export default Vue.extend({
   name: "LoginForm",
-  components: {TextLoad, ValidationProvider},
+  components: {TextLoad, ValidationProvider, ValidationObserver},
   props: {
     ButtonText: {type: String, default: "Confirmer"}
   },
@@ -20,11 +20,21 @@ export default Vue.extend({
     async formIsValid() {
       const ref = this.$refs.loginObserver as Vue & { validate: () => boolean }
       return await ref.validate();
+    },
+    formIsEmpty(): boolean {
+      return this.form.email.length === 0 || this.form.password.length === 0;
     }
   },
   methods: {
     async handleSubmit() {
-      console.log("formIsValid", await this.formIsValid)
+      if(await this.formIsValid){
+        this.$emit('submit', this.form)
+      }
+    },
+    formContainErrors(errors: {[key: string]: []}): boolean{
+      if(!errors) return false;
+      if(!errors['Le mot de passe'] || !errors['L\'email']) return false;
+      return errors['Le mot de passe'].length > 0 || errors['L\'email'].length > 0
     }
   }
 })

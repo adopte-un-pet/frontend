@@ -30,5 +30,6 @@ export default {
   .dashboard_container {
     min-height: calc(100vh - calc(var(--navbar-height) + 1px));
     background: #f7f7f8;
+    display: flex;
   }
 </style>

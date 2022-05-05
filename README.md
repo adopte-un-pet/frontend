@@ -67,3 +67,9 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+### `scripts`
+
+les scripts shells personnalisés ne fonctionnent pas sur ubuntu. pour les executer, faire la commande chmod 777 ./scripts/[nom-du-script]
+
+puis executer le script avec la commande ./scripts/[nom-du-script]

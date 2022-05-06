@@ -3,6 +3,7 @@ import MailForm from "~/components/Forms/MailForm/index.vue";
 import Logo from "~/components/Branding/Logo/index.vue";
 import media from "~/mixins/media";
 import Vue from "vue";
+import { mapActions } from "vuex";
 
 const title = "Mot de passe oublié"
 const description = "Site communautaire dans lequel les éleveurs français d’animaux de compagnie pourront inscrire leur élevage et présenter les animaux destinés à la vente avec une fiche par animal."
@@ -21,12 +22,12 @@ export default Vue.extend({
   },
   mixins: [media],
   methods: {
-    handleSubmit(email: string): void{
+    ...mapActions('authentification', ['sendForgotMail']),
+    async handleSubmit(email: string): Promise<void> {
       const formRef = this.$refs.MailForm as Vue & { loading: boolean };
       formRef.loading = true;
-      setTimeout(() => {
-        formRef.loading = false;
-      }, 2500)
+      await this.sendForgotMail(email)
+      formRef.loading = false;
       this.email = email;
       this.mailSend = true;
     },

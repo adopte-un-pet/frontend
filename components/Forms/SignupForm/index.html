@@ -1,6 +1,42 @@
 <b-form class="auth_form" @submit.prevent="handleSubmit">
   <validation-observer ref="signupObserver" v-slot="{ errors }" tag="div"
                        style="display: flex; flex-direction: column; gap: 24px;">
+    <div class="row">
+      <div class="col" style="padding-right: 8px;">
+        <validation-provider v-slot="{ errors }" name="L'email" rules="required|email" tag="div">
+          <b-form-input
+            id="email"
+            class="md_input"
+            v-model="form.email"
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+            :class="{'is-invalid': errors.length > 0}"
+            required
+          />
+          <div class="invalid-feedback" v-if="errors.length > 0">
+            {{ errors[0] }}
+          </div>
+        </validation-provider>
+      </div>
+      <div class="col" style="padding-left: 8px;">
+        <validation-provider v-slot="{ errors }" name="L'email" rules="required|email" tag="div">
+          <b-form-input
+            id="email"
+            class="md_input"
+            v-model="form.email"
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+            :class="{'is-invalid': errors.length > 0}"
+            required
+          />
+          <div class="invalid-feedback" v-if="errors.length > 0">
+            {{ errors[0] }}
+          </div>
+        </validation-provider>
+      </div>
+    </div>
     <validation-provider v-slot="{ errors }" name="L'email" rules="required|email" tag="div">
       <b-form-input
         id="email"
@@ -16,6 +52,7 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
+
     <validation-provider v-slot="{ errors }" name="Le mot de passe" rules="required" tag="div">
       <b-form-input
         id="password"
@@ -31,9 +68,9 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
-      <button type="submit" :disabled="formIsEmpty || formContainErrors(errors)" class="btn btn-primary auth_btn">
-        <span v-if="!loading">{{ ButtonText }}</span>
-        <TextLoad v-if="loading"/>
-      </button>
+    <button type="submit" :disabled="formIsEmpty || formContainErrors(errors)" class="btn btn-primary auth_btn">
+      <span v-if="!loading">{{ ButtonText }}</span>
+      <TextLoad v-if="loading"/>
+    </button>
   </validation-observer>
 </b-form>

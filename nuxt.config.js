@@ -56,7 +56,7 @@ export default {
           name: "Authorization"
         },
         endpoints: {
-          login: {url: '/api/auth/login', method: 'post', property: 'Token',},
+          login: {url: '/api/auth/login', method: 'post', property: 'Token'},
           logout: {url: '/api/auth/logout', method: 'post'},
           user: {url: '/api/auth/user', method: 'get'}
         }

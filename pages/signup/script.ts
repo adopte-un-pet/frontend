@@ -1,4 +1,4 @@
-import SignupForm from "~/components/Forms/BreederCreateForm/index.vue"
+import SignupForm from "~/components/Forms/SignupForm/index.vue"
 import Logo from "@/components/Branding/Logo/index.vue"
 import media from "~/mixins/media";
 import {updateHead} from "~/data/update-head";

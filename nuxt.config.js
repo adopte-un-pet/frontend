@@ -17,7 +17,8 @@ export default {
   plugins: [
     { src: '~plugins/leaflet.ts', ssr: false },
     { src: '~plugins/moment-format.ts', ssr: true },
-    {src: '~plugins/vee-validate.ts', ssr: false}
+    {src: '~plugins/vee-validate.ts', ssr: false},
+    {src: '~plugins/axios-accessor.ts', ssr: true}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -1,7 +1,7 @@
 <b-form class="auth_form" @submit.prevent="handleSubmit">
   <validation-observer ref="signupObserver" v-slot="{ errors }" tag="div"
                        style="display: flex; flex-direction: column; gap: 24px;">
-    <validation-provider v-slot="{ errors }" name="Le nom de votre élevage" rules="required|email" tag="div">
+    <validation-provider v-slot="{ errors }" name="Le nom de votre élevage" rules="required" tag="div">
       <b-form-input
         id="name"
         class="md_input"
@@ -16,24 +16,60 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
-    <validation-provider v-slot="{ errors }" name="La description de votre élevage" rules="required" tag="div">
+    <validation-provider v-slot="{ errors }" name="numéro SIRET" rules="required|numeric|length:14" tag="div">
       <b-form-input
-        id="description"
+        id="siret"
         class="md_input"
-        v-model="form.description"
-        type="number"
+        v-model="form.siret"
+        type="text"
+        placeholder="votre numéro SIRET"
         autocomplete="off"
         :class="{'is-invalid': errors.length > 0}"
-        placeholder="La toto de votre élevage"
         required
       />
       <div class="invalid-feedback" v-if="errors.length > 0">
         {{ errors[0] }}
       </div>
     </validation-provider>
-      <button type="submit" :disabled="formIsEmpty || formContainErrors(errors)" class="btn btn-primary auth_btn">
-        <span v-if="!loading">{{ ButtonText }}</span>
-        <TextLoad v-if="loading"/>
-      </button>
+    <validation-provider v-slot="{ errors }" name="Département" rules="required" tag="div">
+      <div>votre département: {{ selectedDepartment }}</div>
+      <select v-model="selectedDepartment">
+        <option v-for="department in departments" :value="department.dep_name">
+          {{ department.num_dep }} - {{ department.dep_name }} ( {{ department.region_name}})
+        </option>
+      </select>
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+    <validation-provider v-slot="{ errors }" name="Types d'animaux" rules="required" tag="div">
+      <div>les animaux de votre élevage: {{ selectedAnimalCategory }}</div>
+      <select v-model="selectedAnimalCategory">
+        <option v-for="animalCategory in animalCategories" :value="animalCategory.dep_name">
+          {{ animalCategory.name }}
+        </option>
+      </select>
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+    <validation-provider v-slot="{ errors }" name="La description de votre élevage" rules="required" tag="div">
+      <b-form-textarea
+        id="description"
+        class="md_input"
+        v-model="form.description"
+        autocomplete="off"
+        :class="{'is-invalid': errors.length > 0}"
+        placeholder="La description de votre élevage"
+        required
+      />
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+    <button type="submit" :disabled="formIsEmpty || formContainErrors(errors)" class="btn btn-primary auth_btn">
+      <span v-if="!loading">{{ ButtonText }}</span>
+      <TextLoad v-if="loading"/>
+    </button>
   </validation-observer>
 </b-form>

@@ -1,0 +1,11 @@
+.auth_form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.auth_btn {
+  font-weight: 700;
+  font-size: 18px;
+  height: 48px;
+}

@@ -1,6 +1,7 @@
 import TextLoad from "@/components/Loaders/TextLoad/index.vue"
 import {ValidationObserver, ValidationProvider} from "vee-validate";
 import Vue from "vue";
+
 export default Vue.extend({
     name: "SignupForm",
     components: {TextLoad, ValidationProvider, ValidationObserver},
@@ -10,12 +11,11 @@ export default Vue.extend({
     data(){
       return {
         loading: false,
-        toto: "toutou",
         form: {
           email: "",
           password: ""
         },
-        selected:'',
+        selectedDepartment:"",
         departments: [
           {
             "num_dep": "01",
@@ -47,7 +47,19 @@ export default Vue.extend({
             "dep_name": "Alpes-Maritimes",
             "region_name": "Provence-Alpes-Côte d'Azur"
           }
+        ],
+        selectedAnimalCategory:"",
+        animalCategories:[
+          {
+            "name": "Chat",
+            "description": ""
+          },
+          {
+            "name": "Chien",
+            "description": ""
+          }
         ]
+        
       }
     },
   computed: {
@@ -61,9 +73,6 @@ export default Vue.extend({
     }
   },
   methods: {
-    mange(bouffe: string ){
-      console.log("de la "+ bouffe)
-    },
     async handleSubmit() {
       if(await this.formIsValid){
         this.$emit('submit', this.form)

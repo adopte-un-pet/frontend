@@ -16,15 +16,39 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
+    <validation-provider v-slot="{ errors }" name="numéro SIRET" rules="required|numeric|length:14" tag="div">
+      <b-form-input
+        id="siret"
+        class="md_input"
+        v-model="form.siret"
+        type="text"
+        placeholder="votre numéro SIRET"
+        autocomplete="off"
+        :class="{'is-invalid': errors.length > 0}"
+        required
+      />
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
     <validation-provider v-slot="{ errors }" name="Département" rules="required" tag="div">
-      <select v-model="selected">
+      <div>votre département: {{ selectedDepartment }}</div>
+      <select v-model="selectedDepartment">
         <option v-for="department in departments" :value="department.dep_name">
           {{ department.num_dep }} - {{ department.dep_name }} ( {{ department.region_name}})
         </option>
       </select>
-      
-      <div>Selected: {{ selected }}</div>
-      
+      <div class="invalid-feedback" v-if="errors.length > 0">
+        {{ errors[0] }}
+      </div>
+    </validation-provider>
+    <validation-provider v-slot="{ errors }" name="Types d'animaux" rules="required" tag="div">
+      <div>les animaux de votre élevage: {{ selectedAnimalCategory }}</div>
+      <select v-model="selectedAnimalCategory">
+        <option v-for="animalCategory in animalCategories" :value="animalCategory.dep_name">
+          {{ animalCategory.name }}
+        </option>
+      </select>
       <div class="invalid-feedback" v-if="errors.length > 0">
         {{ errors[0] }}
       </div>

@@ -1,4 +1,4 @@
-import {email, required} from "vee-validate/dist/rules";
+import {email, numeric, required, length} from "vee-validate/dist/rules";
 import {extend, setInteractionMode} from 'vee-validate';
 
 
@@ -12,6 +12,17 @@ extend('confirmed', {
   ...required,
   message: 'Les mots de passe saisis ne sont pas identiques'
 })
+extend('numeric',{
+  ...numeric,
+  message: 'Seuls les caractères numériques sont autorisés ici'
+
+})
+extend('length',{
+  ...length,
+  message: 'Ce n\'est pas la bonne longueur'
+
+})
+
 
 extend('password', {
   params: ['target'],

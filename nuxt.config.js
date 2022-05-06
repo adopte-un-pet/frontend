@@ -55,9 +55,9 @@ export default {
           name: "Authorization"
         },
         endpoints: {
-          login: {url: '/api/account/login', method: 'post', property: 'Token',},
-          logout: {url: '/api/account/logout', method: 'post'},
-          user: {url: '/api/account/user', method: 'post'}
+          login: {url: '/api/auth/login', method: 'post', property: 'Token',},
+          logout: {url: '/api/auth/logout', method: 'post'},
+          user: {url: '/api/auth/user', method: 'get'}
         }
       }
     }
@@ -66,7 +66,7 @@ export default {
   proxy: {
     '/api/': {
       target: process.env.API_URL || 'http://localhost:3333',
-      pathRewrite: { '^/api/': 'api/' }
+      pathRewrite: { '^/api/': '/' }
     }
   },
 

@@ -19,13 +19,35 @@ export default Vue.extend({
   layout: "anonymous",
   mixins: [media],
   methods: {
-    handleSubmit(form: Body) {
-      console.log(form)
-      const formRef = this.$refs.LoginForm as Vue & { loading: boolean };
-      formRef.loading = true;
-      setTimeout(() => {
+    async handleSubmit(form: Body) {
+      const formRef = this.$refs.LoginForm as Vue & { loading: boolean, formIsValid: boolean};
+      const formIsValid = await formRef.formIsValid;
+      if (!formIsValid) {
+        console.log("Message d'erreur", 'Une ou plusieurs erreurs sont présentes dans le formulaire')
+      }
+      try {
+        formRef.loading = true;
+
+        await this.$auth
+          .loginWith("local", {
+            data: form,
+          })
+          .then(
+            async (x) => {
+              await this.$router.push("/");
+              console.log('Message de validation', 'Connexion réussie, bienvenue 😃')
+            },
+            (error) => {
+              console.log("Message d'erreur", 'Une erreur est survenue lors de la connexion')
+              console.error(error);
+            }
+          );
+      } catch (r) {
+        console.log("Message d'erreur", 'Une erreur est survenue lors de la connexion')
+        console.log(r);
+      } finally {
         formRef.loading = false;
-      }, 2500)
+      }
     }
   }
 })

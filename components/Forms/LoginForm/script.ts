@@ -19,7 +19,7 @@ export default Vue.extend({
   computed: {
     async formIsValid() {
       const ref = this.$refs.loginObserver as Vue & { validate: () => boolean }
-      return await ref.validate();
+      return ref.validate();
     },
     formIsEmpty(): boolean {
       return this.form.email.length === 0 || this.form.password.length === 0;

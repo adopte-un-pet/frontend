@@ -28,6 +28,7 @@
       "@nuxt/types",
       "@types/node",
       "@nuxt/image",
+      "@nuxtjs/auth-next",
       "@nuxt/axios",
       "vee-validate"
     ]

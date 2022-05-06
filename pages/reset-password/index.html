@@ -18,7 +18,7 @@
     <div class="col-md-12 col-lg-5 auth_form--container" v-if="mailSend">
       <h1 class="auth_confirm--title text-gray-100 mb-5">Si un compte existe pour <b>{{ email }}</b>,
         vous recevrez un e-mail avec des instructions sur la réinitialisation de votre mot de passe. S'il n'arrive pas, assurez-vous de vérifier vos spams.</h1>
-      <NuxtLink class="text-primary mt-3" to="/login">Retour</NuxtLink>
+      <a class="text-primary mt-3" @click="mailSend = false">Retour</a>
     </div>
   </div>
 </section>

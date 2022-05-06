@@ -1,4 +1,4 @@
 export default {
     name: "profile",
-    layout: "anonymous"
+    layout: "connected"
 }

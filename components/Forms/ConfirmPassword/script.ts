@@ -27,7 +27,7 @@ export default Vue.extend({
   methods: {
     async handleSubmit(){
       if(await this.formIsValid){
-        this.$emit('submit', this.password)
+        this.$emit('submit', this.password, this.password_confirm)
       }
     },
     formContainErrors(errors: {[key: string]: []}): boolean{

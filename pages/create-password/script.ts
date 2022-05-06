@@ -8,6 +8,7 @@ import ConfirmPassword from "@/components/Forms/ConfirmPassword/index.vue"
 import Logo from "@/components/Branding/Logo/index.vue"
 import media from "~/mixins/media";
 import Vue from "vue";
+import {mapActions} from "vuex";
 
 export default Vue.extend({
   name: "create-password",
@@ -21,13 +22,19 @@ export default Vue.extend({
     }
   },
   methods: {
-    handleSubmit(password: string): void {
-      console.log(password)
-      const formRef = this.$refs.ConfirmPassword as Vue & { loading: boolean };
+    ...mapActions('authentification', ['resetPassword']),
+    async handleSubmit(password: string, password_confirmation: string): Promise<void> {
+      const formRef = this.$refs.ConfirmPassword as Vue & { loading: boolean, formIsValid: boolean };
       formRef.loading = true;
-      setTimeout(() => {
-        formRef.loading = false;
-      }, 2500)
+
+      const formIsValid = await formRef.formIsValid;
+      if (!formIsValid) {
+        console.log("Message d'erreur", 'Une ou plusieurs erreurs sont présentes dans le formulaire')
+        return;
+      }
+      await this.resetPassword({token: this.token, data: {password, password_confirmation}})
+      formRef.loading = false
+      await this.$router.push('/login')
     }
   }
 })

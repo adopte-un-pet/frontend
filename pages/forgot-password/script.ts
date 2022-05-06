@@ -7,10 +7,10 @@ import { mapActions } from "vuex";
 
 const title = "Mot de passe oublié"
 const description = "Site communautaire dans lequel les éleveurs français d’animaux de compagnie pourront inscrire leur élevage et présenter les animaux destinés à la vente avec une fiche par animal."
-const route = "/reset-password"
+const route = "/forgot-password"
 
 export default Vue.extend({
-  name: "reset-password",
+  name: "forgot-password",
   layout: "anonymous",
   head: updateHead(title, description, route),
   components: {MailForm, Logo},
@@ -22,11 +22,16 @@ export default Vue.extend({
   },
   mixins: [media],
   methods: {
-    ...mapActions('authentification', ['sendForgotMail']),
+    ...mapActions('authentification', ['sendForgotPasswordMail']),
     async handleSubmit(email: string): Promise<void> {
-      const formRef = this.$refs.MailForm as Vue & { loading: boolean };
+      const formRef = this.$refs.MailForm as Vue & { loading: boolean, formIsValid: boolean };
+      const formIsValid = await formRef.formIsValid;
+      if (!formIsValid) {
+        console.log("Message d'erreur", 'Une ou plusieurs erreurs sont présentes dans le formulaire')
+        return;
+      }
       formRef.loading = true;
-      await this.sendForgotMail(email)
+      await this.sendForgotPasswordMail(email)
       formRef.loading = false;
       this.email = email;
       this.mailSend = true;

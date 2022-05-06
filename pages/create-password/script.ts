@@ -17,7 +17,6 @@ export default Vue.extend({
   mixins: [media],
   data(){
     return {
-      userId: this.$route.params.id,
       token: this.$route.query.token,
     }
   },

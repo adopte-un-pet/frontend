@@ -1,12 +1,12 @@
 import UploadBanner from "@/components/Medias/UploadBanner/index.vue";
 import UploadAvatar from "@/components/Medias/UploadAvatar/index.vue";
 import ProfileForm from "@/components/Form/ProfileForm/index.vue";
-import { mapActions } from "VueX";
+import { mapActions } from "vuex";
 import Vue from "vue"
 
 export default Vue.extend({
     name: "profile",
-    layout: "connected"
+    layout: "connected",
     components: {UploadBanner, UploadAvatar, ProfileForm},
     async fetch(){
         await this.refresh()

@@ -5,15 +5,15 @@ import {updateHead} from "~/data/update-head";
 import Vue from "vue";
 
 type Body = {
-  email: string,
-  password: string
-}
+    email: string,
+    password: string
+  }
 const title = "Adopter un animal : nos annonces et nos éleveurs"
 const description = "Site communautaire dans lequel les éleveurs français d’animaux de compagnie pourront inscrire leur élevage et présenter les animaux destinés à la vente avec une fiche par animal."
-const route = "/login/breeder"
+const route = "/breederSignUp"
 
 export default Vue.extend({
-    name: "loginBreeder",
+    name: "breederSignUp",
     head: updateHead(title, description, route),
     components: {BreederCreateForm, Logo},
     layout: "anonymous",

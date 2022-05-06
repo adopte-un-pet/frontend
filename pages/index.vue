@@ -16,6 +16,9 @@ import moment from 'moment'
      return {
        today: moment()
      }
-   }
+   },
+  method: {
+
+  }
  }
 </script>

@@ -13,7 +13,7 @@ const description = "Site communautaire dans lequel les éleveurs français d’
 const route = "/login/breeder"
 
 export default Vue.extend({
-    name: "login/breeder",
+    name: "loginBreeder",
     head: updateHead(title, description, route),
     components: {BreederCreateForm, Logo},
     layout: "anonymous",

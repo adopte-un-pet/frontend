@@ -1,13 +1,13 @@
 <b-form class="auth_form" @submit.prevent="handleSubmit">
   <validation-observer ref="signupObserver" v-slot="{ errors }" tag="div"
                        style="display: flex; flex-direction: column; gap: 24px;">
-    <validation-provider v-slot="{ errors }" name="L'email" rules="required|email" tag="div">
+    <validation-provider v-slot="{ errors }" name="Le nom de votre élevage" rules="required|email" tag="div">
       <b-form-input
-        id="email"
+        id="name"
         class="md_input"
-        v-model="form.email"
-        type="email"
-        placeholder="Email"
+        v-model="form.name"
+        type="text"
+        placeholder="Le nom de votre élevage"
         autocomplete="off"
         :class="{'is-invalid': errors.length > 0}"
         required
@@ -16,15 +16,15 @@
         {{ errors[0] }}
       </div>
     </validation-provider>
-    <validation-provider v-slot="{ errors }" name="Le mot de passe" rules="required" tag="div">
+    <validation-provider v-slot="{ errors }" name="La description de votre élevage" rules="required" tag="div">
       <b-form-input
-        id="password"
+        id="description"
         class="md_input"
-        v-model="form.password"
-        type="password"
+        v-model="form.description"
+        type="number"
         autocomplete="off"
         :class="{'is-invalid': errors.length > 0}"
-        placeholder="Mot de passe"
+        placeholder="La toto de votre élevage"
         required
       />
       <div class="invalid-feedback" v-if="errors.length > 0">
